@@ -1,0 +1,8 @@
+{
+  "name": "appDorama",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "id": "51bf0b29"
+}
