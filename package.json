@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "angularfire2": "^5.4.2"
+  }
+}
