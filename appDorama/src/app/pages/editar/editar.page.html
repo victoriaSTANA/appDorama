@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Editar Dorama</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding"><br>
+
+  <form [formGroup]="doramaForm" (submit)="doramaEvent()">  
+    <ion-item>
+      <ion-icon name="person" color="if" slot="start"></ion-icon>
+      <ion-input formControlName="dorama" type="text" placeholder="Nome do dorama" autofocus="true"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="document" color="if" slot="start"></ion-icon>
+      <ion-input formControlName="descricao" type="text" placeholder="Descrição"></ion-input>
+    </ion-item>
+
+    <ion-list>
+      <ion-item>
+        <ion-select formControlName="categoria" placeholder="Selecione a categoria">
+          <ion-select-option value="romance">Romance</ion-select-option>
+          <ion-select-option value="aventura">Aventura</ion-select-option>
+          <ion-select-option value="terror">Terror</ion-select-option>
+          <ion-select-option value="acao">Ação</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+
+    <ion-list>
+      <ion-radio-group formControlName="tipo">
+        <ion-list-header>
+          <ion-label>Idioma</ion-label>
+        </ion-list-header>
+        <ion-item>
+          <ion-label>Coreano</ion-label>
+          <ion-radio slot="start" value="coreano" color="primary"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Inglês</ion-label>
+          <ion-radio slot="start" value="ingles" color="primary"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Português</ion-label>
+          <ion-radio slot="start" value="portugues" color="primary"></ion-radio>
+        </ion-item>
+      </ion-radio-group><br><br>
+    </ion-list>
+
+    <ion-item fomrControlName="dorama_assistido">
+      <ion-checkbox></ion-checkbox> Você já assistiu esse dorama?
+    </ion-item>
+
+
+      <ion-button type="clear" color="danger" (click)="cancelar()">Cancelar</ion-button>
+    </ion-item>
+
+    <ion-footer>
+      <ion-toolbar>
+        <ion-button [disabled]="doramaForm.valid" type="submit" expand="block" color="blue" fill="clear" expand="full">Registrar</ion-button>
+      </ion-toolbar>
+    </ion-footer>
+  </form>
+</ion-content>
